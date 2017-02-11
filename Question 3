@@ -1,0 +1,33 @@
+import java.util.*;
+public class Q3 {
+	public static void main(String[]args){
+		Scanner scan = new Scanner(System.in);
+		int G = scan.nextInt();
+		int P = scan.nextInt();
+		int[] gates = new int[G];
+		int[] planes = new int[P];
+		boolean landed = false;
+		boolean cont = true;
+		int count = 0;
+		for(int i = 0; i < G; i++){
+			gates[i] = (i+1);
+		}
+		
+		for(int i = 0; i < P; i++){
+			landed = false;
+			planes[i] = scan.nextInt();
+			if(cont)
+				for(int j = planes[i]; j > 0; j--){
+					if(gates[j-1] != 0){
+						gates[j-1] = 0;
+						landed = true;
+						count++;
+						break;
+					}
+				}
+			if(landed == false)
+				cont = false;
+		}
+		System.out.println(count);
+	}
+}
