@@ -1,0 +1,23 @@
+import java.util.*;
+public class Q2 {
+	public static void main(String[]args){
+		Scanner scan = new Scanner(System.in);
+		int J = scan.nextInt();
+		int A = scan.nextInt();
+		int match = 0;
+		String[] jers = new String[J];
+		String size;
+		int jer;
+		for(int i = 0; i < J; i++){
+			jers[i] = scan.next();
+		}
+		
+		for(int i = 0; i < A; i++){
+			size = scan.next();
+			jer = scan.nextInt() - 1;
+			if(jers[jer].equals(size))
+				match++;
+		}
+		System.out.println(match);
+	}
+}
